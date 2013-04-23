@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/tambah_penemu"
+	android:title="Tambah Data Penemu atau Sejarahwan" />
+    <item android:id="@+id/cari_penemu"
+	android:title="Cari Data Penemu atau Sejarahwan" />
+</menu>
