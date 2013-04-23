@@ -155,7 +155,8 @@ public class TambahPenemu extends Activity{
 	
 	public String getRealPathFromURI(Uri contentUri) {
         String [] proj 		= {MediaStore.Images.Media.DATA};
-        Cursor cursor 		= managedQuery( contentUri, proj, null, null,null);
+        @SuppressWarnings("deprecation")
+		Cursor cursor 		= managedQuery( contentUri, proj, null, null,null);
         
         if (cursor == null) return null;
         

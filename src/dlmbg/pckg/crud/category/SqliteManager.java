@@ -89,6 +89,11 @@ public class SqliteManager {
 		return crudDatabase.query("tbl_penemu", FIELD_TABEL_PENEMU, "id_kategori =" + rowId, null, null, null, null);
 	}
 
+	public Cursor bacaDataPencarianPenemu(String cari) {
+		
+		return crudDatabase.query("tbl_penemu", FIELD_TABEL_PENEMU, "nama_penemu like '%"+cari+"%'", null, null, null, null);
+	}
+
 	public Cursor bacaDataTerseleksiKategori(long rowId) throws SQLException {
 		Cursor cursor = crudDatabase.query(true, "tbl_kategori",FIELD_TABEL_KATEGORI,"_id =" + rowId,null, null, null, null, null);
 		cursor.moveToFirst();

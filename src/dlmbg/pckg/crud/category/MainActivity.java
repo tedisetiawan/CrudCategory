@@ -15,6 +15,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 public class MainActivity extends ListActivity {
 	private SqliteManager sqliteDB;
 	private SimpleCursorAdapter mCursorAdapter;
+	private EditText cari_et;
 
     @SuppressWarnings("deprecation")
 	@Override
@@ -38,6 +41,8 @@ public class MainActivity extends ListActivity {
 		Cursor cursor = sqliteDB.bacaDataKategori();
 
 		startManagingCursor(cursor);
+		
+		cari_et = (EditText) findViewById(R.id.cari_penemu);
 
 		String[] awal = new String[] { "kategori" };
 		int[] tujuan = new int[] { R.id.rowtext };
@@ -56,6 +61,15 @@ public class MainActivity extends ListActivity {
 
 		setListAdapter(mCursorAdapter);
 		registerForContextMenu(getListView());
+		
+		Button button = (Button) findViewById(R.id.btn_cari_penemu);
+		button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+	    		CariData();
+				finish();
+			}
+		});
 
     }
 
@@ -135,6 +149,12 @@ public class MainActivity extends ListActivity {
 		if (!baru) {
 			intent.putExtra(EXTRA_ROWID, rowId);
 		}
+		startActivity(intent);
+	}
+
+	public void CariData() {
+		Intent intent = new Intent(this, CariPenemu.class);
+		intent.putExtra("cari_data", cari_et.getText().toString());
 		startActivity(intent);
 	}
 }

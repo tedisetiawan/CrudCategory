@@ -17,10 +17,10 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class DaftarPenemu extends ListActivity {
+public class CariPenemu extends ListActivity {
 	private SqliteManager sqliteDB;
 	private SimpleCursorAdapter mCursorAdapter;
-	private String id_get;
+	private String cari;
 	private EditText cari_et;
 
     @SuppressWarnings("deprecation")
@@ -33,10 +33,11 @@ public class DaftarPenemu extends ListActivity {
         sqliteDB.bukaKoneksi();
         
 		Bundle extras = getIntent().getExtras();
-		id_get = extras.getString("id_kategori");
-		Cursor cursor = sqliteDB.bacaDataPenemu(id_get);
+		cari = extras.getString("cari_data");
+		Cursor cursor = sqliteDB.bacaDataPencarianPenemu(cari);
 		
 		cari_et = (EditText) findViewById(R.id.cari_penemu);
+		cari_et.setText(cari);
 
 		startManagingCursor(cursor);
 
