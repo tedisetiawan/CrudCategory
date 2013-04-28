@@ -22,6 +22,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+/*
+ * Gede Lumbung - 2013
+ * http://gedelumbung.com
+ * Just Simple Android CRUD App with Parent Child Content
+ */
+
 public class TambahPenemu extends Activity{
 	private Uri mImageCaptureUri;
 	private ImageView mImageView;	

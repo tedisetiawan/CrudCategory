@@ -10,6 +10,12 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/*
+ * Gede Lumbung - 2013
+ * http://gedelumbung.com
+ * Just Simple Android CRUD App with Parent Child Content
+ */
+
 public class SqliteManager {
 	public static final int VERSI_DATABASE= 1;
 	public static final String NAMA_DATABASE = "Penemu";

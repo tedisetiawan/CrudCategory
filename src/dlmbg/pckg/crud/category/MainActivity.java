@@ -21,6 +21,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/*
+ * Gede Lumbung - 2013
+ * http://gedelumbung.com
+ * Just Simple Android CRUD App with Parent Child Content
+ */
+
 public class MainActivity extends ListActivity {
 	private SqliteManager sqliteDB;
 	private SimpleCursorAdapter mCursorAdapter;

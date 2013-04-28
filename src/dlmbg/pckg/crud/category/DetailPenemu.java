@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/*
+ * Gede Lumbung - 2013
+ * http://gedelumbung.com
+ * Just Simple Android CRUD App with Parent Child Content
+ */
+
 public class DetailPenemu extends Activity{
 
 	private TextView nama_penemu_et, kelahiran_et, keterangan_et;

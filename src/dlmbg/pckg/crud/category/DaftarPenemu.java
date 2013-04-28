@@ -17,6 +17,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/*
+ * Gede Lumbung - 2013
+ * http://gedelumbung.com
+ * Just Simple Android CRUD App with Parent Child Content
+ */
+
 public class DaftarPenemu extends ListActivity {
 	private SqliteManager sqliteDB;
 	private SimpleCursorAdapter mCursorAdapter;
