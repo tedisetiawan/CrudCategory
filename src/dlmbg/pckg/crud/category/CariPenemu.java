@@ -28,6 +28,7 @@ public class CariPenemu extends ListActivity {
 	private SimpleCursorAdapter mCursorAdapter;
 	private String cari;
 	private EditText cari_et;
+	SessionManager session;
 
     @SuppressWarnings("deprecation")
 	@Override
@@ -63,7 +64,12 @@ public class CariPenemu extends ListActivity {
 			});
 
 		setListAdapter(mCursorAdapter);
-		registerForContextMenu(getListView());
+		session = new SessionManager(getApplicationContext());
+
+		if (session.isLoggedIn() == true) 
+		{
+			registerForContextMenu(getListView());
+		}
 		
 		Button button = (Button) findViewById(R.id.btn_cari_penemu);
 		button.setOnClickListener(new View.OnClickListener() {

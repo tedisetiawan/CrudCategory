@@ -32,6 +32,7 @@ public class MainActivity extends ListActivity {
 	private SimpleCursorAdapter mCursorAdapter;
 	private EditText cari_et;
 
+	SessionManager session;
     @SuppressWarnings("deprecation")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,18 @@ public class MainActivity extends ListActivity {
 			});
 
 		setListAdapter(mCursorAdapter);
-		registerForContextMenu(getListView());
+
+		session = new SessionManager(getApplicationContext());
+
+		if (session.isLoggedIn() == true) 
+		{
+			registerForContextMenu(getListView());
+		}	
+		
+		String cek = "ok";
+		if(cek=="asu")
+		{
+		}
 		
 		Button button = (Button) findViewById(R.id.btn_cari_penemu);
 		button.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +98,11 @@ public class MainActivity extends ListActivity {
 	}
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.opt_menu, menu);
+    	if (session.isLoggedIn() == true) 
+		{
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.opt_menu, menu);
+		}
         return true;
     }
 

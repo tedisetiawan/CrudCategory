@@ -28,6 +28,7 @@ public class DaftarPenemu extends ListActivity {
 	private SimpleCursorAdapter mCursorAdapter;
 	private String id_get;
 	private EditText cari_et;
+	SessionManager session;
 
     @SuppressWarnings("deprecation")
 	@Override
@@ -62,7 +63,12 @@ public class DaftarPenemu extends ListActivity {
 			});
 
 		setListAdapter(mCursorAdapter);
-		registerForContextMenu(getListView());
+		session = new SessionManager(getApplicationContext());
+
+		if (session.isLoggedIn() == true) 
+		{
+			registerForContextMenu(getListView());
+		}
 		
 		Button button = (Button) findViewById(R.id.btn_cari_penemu);
 		button.setOnClickListener(new View.OnClickListener() {
@@ -82,8 +88,11 @@ public class DaftarPenemu extends ListActivity {
 	}
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.opt_menu_penemu, menu);
+    	if (session.isLoggedIn() == true) 
+		{
+	        MenuInflater inflater = getMenuInflater();
+	        inflater.inflate(R.menu.opt_menu_penemu, menu);
+		}
         return true;
     }
 
