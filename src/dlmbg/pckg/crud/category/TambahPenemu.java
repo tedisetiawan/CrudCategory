@@ -182,11 +182,11 @@ public class TambahPenemu extends Activity{
 	private void pindahData() {
 		if (id != null) {
 			Cursor cursor = sqliteDB.bacaDataTerseleksiPenemu(id);
-			nama_penemu_et.setText(cursor.getString(2));
-			kelahiran_et.setText(cursor.getString(3));
-			gambar_et.setText(cursor.getString(4));
-			keterangan_et.setText(cursor.getString(5));
-			Bitmap bitmap = BitmapFactory.decodeFile(cursor.getString(4));
+			nama_penemu_et.setText(cursor.getString(3));
+			kelahiran_et.setText(cursor.getString(4));
+			gambar_et.setText(cursor.getString(5));
+			keterangan_et.setText(cursor.getString(6));
+			Bitmap bitmap = BitmapFactory.decodeFile(cursor.getString(5));
 			mImageView.setImageBitmap(bitmap);
 			cursor.close();
 		}

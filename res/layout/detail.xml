@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="wrap_content" android:layout_width="fill_parent"
-	android:orientation="vertical"
+  	android:layout_width="match_parent"
+  	android:layout_height="match_parent"
+    android:orientation="vertical" 
+  	android:background="@drawable/bg"
 	android:padding="10dp" >
+
+  <TextView
+    android:id="@+id/tap_text"
+    android:text="KATALOG PENEMU DAN SEJARAHWAN"
+    android:textSize="14sp"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="90dp"
+    android:layout_marginTop="5dp"
+    android:textColor="#fff"
+    android:layout_height="wrap_content"/>
+  
+  <TextView 
+	android:layout_height="wrap_content"
+    android:textSize="12sp"
+    android:layout_marginLeft="90dp"
+    android:textColor="#fff"
+    android:text="Belajar dan Mengenal Penemu dan Sejarahwan"
+    android:layout_marginBottom="230dp"
+	android:layout_width="fill_parent"/>
  
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
 >
@@ -12,10 +33,32 @@
 	android:layout_height="wrap_content" android:layout_width="fill_parent"
 	android:orientation="vertical" >
 	
+		
+	<CheckBox
+		android:id="@+id/cb_facebook"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="5dp"
+		android:text="  Facebook"
+		android:textSize="14sp"
+		android:clickable="true"
+		android:focusable="true" 
+		android:textColor="#000"
+		android:button="@drawable/btn_check_facebook"/>
+	
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Share Data" />
+    
 	<TextView android:text=""
 	    android:layout_height="wrap_content"
 	    android:id="@+id/nama_penemu_detail"
         android:textSize="20sp"
+   	 	android:textColor="#000"
 		android:layout_width="fill_parent" >
 	</TextView>
     
@@ -29,6 +72,7 @@
 	    android:layout_height="wrap_content"
 	    android:id="@+id/kelahiran_detail"
         android:textSize="14sp"
+   	 	android:textColor="#000"
 		android:layout_width="fill_parent" >
 	</TextView>
 	
@@ -36,6 +80,7 @@
 	    android:layout_height="wrap_content"
 	    android:id="@+id/keterangan_detail"
         android:textSize="14sp"
+   	 	android:textColor="#000"
 		android:layout_width="fill_parent" >
 	</TextView>
 

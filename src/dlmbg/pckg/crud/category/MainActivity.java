@@ -51,7 +51,7 @@ public class MainActivity extends ListActivity {
 		
 		cari_et = (EditText) findViewById(R.id.cari_penemu);
 
-		String[] awal = new String[] { "kategori" };
+		String[] awal = new String[] { "kategori_tampil" };
 		int[] tujuan = new int[] { R.id.rowtext };
 		mCursorAdapter = new SimpleCursorAdapter(this, R.layout.baris, cursor, awal, tujuan);
 
@@ -75,10 +75,6 @@ public class MainActivity extends ListActivity {
 			registerForContextMenu(getListView());
 		}	
 		
-		String cek = "ok";
-		if(cek=="asu")
-		{
-		}
 		
 		Button button = (Button) findViewById(R.id.btn_cari_penemu);
 		button.setOnClickListener(new View.OnClickListener() {

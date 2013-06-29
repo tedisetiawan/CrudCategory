@@ -21,8 +21,8 @@ public class SqliteManager {
 	public static final String NAMA_DATABASE = "Penemu";
 	public static final int POSISI_ID = 0;
 
-	public static final String[] FIELD_TABEL_KATEGORI ={"_id","kategori"};
-	public static final String[] FIELD_TABEL_PENEMU ={"_id", "id_kategori", "nama_penemu", "kelahiran", "gambar", "keterangan"};
+	public static final String[] FIELD_TABEL_KATEGORI ={"_id, (_id || '. ' || kategori) as kategori_tampil, kategori"};
+	public static final String[] FIELD_TABEL_PENEMU ={"_id, (_id || '. ' || nama_penemu) as nama_penemu_tampil", "id_kategori", "nama_penemu", "kelahiran", "gambar", "keterangan"};
 
 	private Context crudContext;
 	private SQLiteDatabase crudDatabase;
@@ -87,12 +87,12 @@ public class SqliteManager {
 	}
 
 	public Cursor bacaDataKategori() {
-		return crudDatabase.query("tbl_kategori",FIELD_TABEL_KATEGORI,null, null,null, null,"kategori DESC");
+		return crudDatabase.query("tbl_kategori",FIELD_TABEL_KATEGORI,null, null,null, null,"_id ASC");
 	}
 
 	public Cursor bacaDataPenemu(String rowId) {
 		
-		return crudDatabase.query("tbl_penemu", FIELD_TABEL_PENEMU, "id_kategori =" + rowId, null, null, null, null);
+		return crudDatabase.query("tbl_penemu", FIELD_TABEL_PENEMU, "id_kategori =" + rowId, null, null, null, "_id ASC");
 	}
 
 	public Cursor bacaDataPencarianPenemu(String cari) {

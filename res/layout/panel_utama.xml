@@ -1,35 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="wrap_content" android:layout_width="fill_parent"	
+  	android:layout_width="match_parent"
+  	android:layout_height="match_parent"
     android:orientation="vertical" 
-	android:padding="20dp" >
-	
-    <TextView android:text= "@string/app_name"
-	    android:layout_height="wrap_content"
-        android:textSize="14sp"
-		android:layout_width="fill_parent" >
-	</TextView>
-	
-    <Button
-        android:id="@+id/btn_browse"
-        android:layout_width="fill_parent"
+  	android:background="@drawable/bg"
+	android:padding="10dp" >
+
+  <TextView
+    android:id="@+id/tap_text"
+    android:text="KATALOG PENEMU DAN SEJARAHWAN"
+    android:textSize="14sp"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="90dp"
+    android:layout_marginTop="5dp"
+    android:textColor="#fff"
+    android:layout_height="wrap_content"/>
+  
+  <TextView 
+	android:layout_height="wrap_content"
+    android:textSize="12sp"
+    android:layout_marginLeft="90dp"
+    android:textColor="#fff"
+    android:text="Belajar dan Mengenal Penemu dan Sejarahwan"
+    android:layout_marginBottom="230dp"
+	android:layout_width="fill_parent"/>
+
+<TableLayout
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:gravity="top"
+    android:stretchColumns="*">
+    
+   <TableRow
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-    	android:orientation="horizontal" 
-        android:text="Browse Data" />
-    <Button
-        android:id="@+id/btn_dashboard"
-        android:layout_width="fill_parent"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+        <Button
+        	android:id="@+id/btn_browse"
+        	android:drawableTop="@drawable/database"
+    		android:layout_span="6"
+    		android:textColor="#000"
+        	android:text="Browse Data Kategori" />
+    </TableRow>
+   <TableRow
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-    	android:orientation="horizontal" 
-        android:text="Dashboard Admin" />
-    <Button
-        android:id="@+id/btn_about"
-        android:layout_width="fill_parent"
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+        <Button
+        	android:id="@+id/btn_dashboard"
+    		android:layout_span="3"
+    		android:textColor="#000"
+        	android:drawableTop="@drawable/tambah"
+        	android:text="Dashboard Admin" />
+        <Button
+        	android:id="@+id/btn_about"
+    		android:layout_span="3"
+    		android:textColor="#000"
+        	android:drawableTop="@drawable/about"
+        	android:text="Tentang Penulis" />
+    </TableRow>
+   <TableRow
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-    	android:orientation="horizontal" 
-        android:text="About" />
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent">
+	<CheckBox
+		android:id="@+id/cb_facebook"
+    		android:layout_span="6"
+		android:text="  Facebook (Not connected) "
+		android:textSize="14sp"
+		android:textStyle="bold"
+		android:textColor="#000"
+		android:clickable="true"
+		android:focusable="true" 
+		android:button="@drawable/btn_check_facebook"/>
+    </TableRow>
+</TableLayout>
 
 </LinearLayout>

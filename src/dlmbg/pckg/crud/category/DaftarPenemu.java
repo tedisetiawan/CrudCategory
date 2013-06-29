@@ -47,7 +47,7 @@ public class DaftarPenemu extends ListActivity {
 
 		startManagingCursor(cursor);
 
-		String[] awal = new String[] { "nama_penemu" };
+		String[] awal = new String[] { "nama_penemu_tampil" };
 		int[] tujuan = new int[] { R.id.rowtext };
 		mCursorAdapter = new SimpleCursorAdapter(this, R.layout.baris, cursor, awal, tujuan);
 
@@ -149,12 +149,12 @@ public class DaftarPenemu extends ListActivity {
 	public void tampilTempatTerseleksi(Long mRowId) {
 		Cursor cursor = sqliteDB.bacaDataTerseleksiPenemu(mRowId);
 		Intent intent = new Intent(this, DetailPenemu.class);
-		intent.putExtra("id_penemu", cursor.getString(0));
-		intent.putExtra("id_kategori", cursor.getString(1));
-		intent.putExtra("nama_penemu", cursor.getString(2));
-		intent.putExtra("kelahiran", cursor.getString(3));
-		intent.putExtra("gambar", cursor.getString(4));
-		intent.putExtra("keterangan", cursor.getString(5));
+		intent.putExtra("id_penemu", cursor.getString(1));
+		intent.putExtra("id_kategori", cursor.getString(2));
+		intent.putExtra("nama_penemu", cursor.getString(3));
+		intent.putExtra("kelahiran", cursor.getString(4));
+		intent.putExtra("gambar", cursor.getString(5));
+		intent.putExtra("keterangan", cursor.getString(6));
 		startActivity(intent);
 
 	}

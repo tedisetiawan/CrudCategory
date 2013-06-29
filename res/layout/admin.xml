@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="wrap_content" android:layout_width="fill_parent"	
+  	android:layout_width="match_parent"
+  	android:layout_height="match_parent"
     android:orientation="vertical" 
-	android:padding="20dp" >
-	
-    <TextView android:text= "@string/app_name"
-	    android:layout_height="wrap_content"
-        android:textSize="14sp"
-		android:layout_width="fill_parent" >
-	</TextView>
-	
+  	android:background="@drawable/bg"
+	android:padding="10dp" >
+
+  <TextView
+    android:id="@+id/tap_text"
+    android:text="KATALOG PENEMU DAN SEJARAHWAN"
+    android:textSize="14sp"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="90dp"
+    android:layout_marginTop="5dp"
+    android:textColor="#fff"
+    android:layout_height="wrap_content"/>
+  
+  <TextView 
+	android:layout_height="wrap_content"
+    android:textSize="12sp"
+    android:layout_marginLeft="90dp"
+    android:textColor="#fff"
+    android:text="Belajar dan Mengenal Penemu dan Sejarahwan"
+    android:layout_marginBottom="230dp"
+	android:layout_width="fill_parent"/>
+  
     <TextView android:text= "Username : "
 	    android:layout_height="wrap_content"
         android:textSize="12sp"
+   	 	android:textColor="#000"
         android:layout_marginTop="16dp"
 		android:layout_width="fill_parent" >
 	</TextView>
@@ -20,6 +36,7 @@
     <EditText android:text= ""
 	    android:layout_height="wrap_content"
         android:textSize="14sp"
+   	 	android:textColor="#000"
         android:id="@+id/ed_username"
 		android:layout_width="fill_parent" >
 	</EditText>
@@ -27,6 +44,7 @@
     <TextView android:text= "Password : "
 	    android:layout_height="wrap_content"
         android:textSize="12sp"
+   	 	android:textColor="#000"
         android:layout_marginTop="16dp"
 		android:layout_width="fill_parent" >
 	</TextView>
@@ -34,6 +52,7 @@
     <EditText android:text= ""
 	    android:layout_height="wrap_content"
         android:textSize="14sp"
+   	 	android:textColor="#000"
         android:id="@+id/ed_password"
 		android:layout_width="fill_parent" >
 	</EditText>
