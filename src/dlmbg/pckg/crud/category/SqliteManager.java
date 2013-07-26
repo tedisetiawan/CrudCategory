@@ -21,8 +21,8 @@ public class SqliteManager {
 	public static final String NAMA_DATABASE = "Penemu";
 	public static final int POSISI_ID = 0;
 
-	public static final String[] FIELD_TABEL_KATEGORI ={"_id, (_id || '. ' || kategori) as kategori_tampil, kategori"};
-	public static final String[] FIELD_TABEL_PENEMU ={"_id, (_id || '. ' || nama_penemu) as nama_penemu_tampil", "id_kategori", "nama_penemu", "kelahiran", "gambar", "keterangan"};
+	public static final String[] FIELD_TABEL_KATEGORI ={"_id, (kategori) as kategori_tampil, kategori"};
+	public static final String[] FIELD_TABEL_PENEMU ={"_id, (nama_penemu) as nama_penemu_tampil", "id_kategori", "nama_penemu", "kelahiran", "gambar", "keterangan"};
 
 	private Context crudContext;
 	private SQLiteDatabase crudDatabase;
